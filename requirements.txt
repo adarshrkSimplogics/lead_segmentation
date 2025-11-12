@@ -2,4 +2,4 @@ streamlit
 pandas
 joblib
 lightgbm
-scikit-learn
+scikit-learn=1.6.1
