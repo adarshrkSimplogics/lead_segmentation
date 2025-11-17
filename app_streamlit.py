@@ -67,7 +67,7 @@ if uploaded_file:
         leads["classification"] = leads["score"].apply(score_band)
 
         # Output limited columns for download
-        result_df = leads[["Prospect ID", "classification"]]
+        result_df = leads[["Prospect ID", "Name", "Email", "Phone", "classification"]]
 
         st.subheader("Classification Summary")
         st.bar_chart(result_df["classification"].value_counts())
@@ -77,7 +77,7 @@ if uploaded_file:
         # Download button
         csv_buffer = BytesIO()
         result_df.to_csv(csv_buffer, index=False)
-        csv_buffer.seek(0)
+        csv_buffer.seek(0)  
 
         st.download_button(
             label="Download Scored CSV",
